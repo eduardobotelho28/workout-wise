@@ -1,0 +1,12 @@
+{
+    "name": "dudub/workout-wise",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eduardo Botelho",
+            "email": "126706543+eduardobotelho28@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
