@@ -1,0 +1,5 @@
+# enable url rewriting
+RewriteEngine On
+
+#rules
+RewriteRule ^ index.php [L]
