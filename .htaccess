@@ -1,5 +1,10 @@
 # enable url rewriting
 RewriteEngine On
 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
 #rules
 RewriteRule ^ index.php [L]
+
+Options -Indexes
