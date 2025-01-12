@@ -6,7 +6,7 @@
     <title>Workout Wise</title>
     <link rel="stylesheet" href="/workout-wise/assets/css/reset.css">
     <link rel="stylesheet" href="/workout-wise/assets/css/register.css">
-    <script defer src=""></script>
+    <script defer src="/workout-wise/assets/js/register.js"></script>
 </head>
 <body>
     
@@ -37,8 +37,8 @@
                 </div>
 
                 <div class="form-wrapper">
-                    <label for="password">Confirmar Senha</label>
-                    <input type="password" name="password" id="password">
+                    <label for="confirm-password">Confirmar Senha</label>
+                    <input type="password" name="confirm_password" id="confirm-password">
                 </div>
 
                 <button type="submit">Cadastrar</button>
