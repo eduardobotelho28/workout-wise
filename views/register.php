@@ -6,7 +6,7 @@
     <title>Workout Wise</title>
     <link rel="stylesheet" href="/workout-wise/assets/css/reset.css">
     <link rel="stylesheet" href="/workout-wise/assets/css/register.css">
-    <script defer src="/workout-wise/assets/js/register.js"></script>
+    <script type="module" defer src="/workout-wise/assets/js/register.js"></script>
 </head>
 <body>
     
