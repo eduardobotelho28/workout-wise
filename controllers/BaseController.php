@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class BaseController {
 
     public function __construct () {
@@ -26,6 +28,7 @@ class BaseController {
     }
 
     protected function response ($data, $http_code, $msg) {
+        header('Content-type: application/json');
         http_response_code($http_code);
         $data['message'] = $msg;
         die(json_encode($data));exit;

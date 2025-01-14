@@ -1,11 +1,15 @@
 <?php
 
+    require __DIR__ . '/../vendor/autoload.php';
+    
+    use App\Authentication_model;
+
     class Authentication {
 
         private $authentication_model;
 
         public function __construct(){
-            
+            $this->authentication_model = new Authentication_model();
         }
 
         public function index () {
@@ -36,6 +40,8 @@
                 $data['message'] = 'error'  ;
                 die(json_encode($data));exit;
             }
+
+            // $this->authentication_model->insert_user($data);
             
         }
 
