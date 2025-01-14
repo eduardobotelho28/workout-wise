@@ -12,14 +12,13 @@ export function treat_response_message (data) {
                 p.innerText = error
                 msgDiv.appendChild(p)
             });
+            return
         }
 
-        else {
-            const p     = document.createElement('p')
-            p.innerText = data.message
-            msgDiv.appendChild(p)
-        }
-
+        const p     = document.createElement('p')
+        p.innerText = data.message ?? ''
+        msgDiv.appendChild(p)
+        
     }
 
 }
