@@ -23,7 +23,28 @@
         }
 
         public function login () {
-            echo 'aqui';
+            
+            try {
+                
+                $data = $_POST                       ;
+                $this->sanitize($data)               ; 
+
+                $errors = $this->valid_input ($data) ;
+
+                if(!empty($errors)) {
+                    $data['errors']  = $errors  ;
+                    $data['message'] = 'error'  ;
+                    die(json_encode($data));exit;
+                }
+
+                //continuar aqui....
+
+                die(json_encode('aqui'));
+            
+            } catch (\Throwable $th) {
+                //throw $th;
+            }
+
         }
 
         public function register () {
@@ -57,6 +78,8 @@
 
             } catch (\Throwable $th) {
                 
+                echo 'nao caiu aqui' ;
+
                 $data['message'] = $th->getMessage();
                 die(json_encode($data));exit        ;
             }
@@ -84,11 +107,11 @@
                 }
             }
 
-            if($data['password'] != $data['confirm_password'] && !empty($data['password']) && !empty($data['confirm_password'])) {
+            if(!empty($data['password']) && !empty($data['confirm_password']) && $data['password'] != $data['confirm_password']) {
                 $errors[] = "As senhas devem ser iguais";
             }
 
-            if(filter_var($data['email'], FILTER_VALIDATE_EMAIL) != true && !empty($data['email'])) {
+            if(!empty($data['email']) && filter_var($data['email'], FILTER_VALIDATE_EMAIL) != true) {
                 $errors[] = "Preencha um Email Válido";
             }
             

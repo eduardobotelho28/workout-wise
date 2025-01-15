@@ -134,3 +134,9 @@ main {
     width: 80%;
     flex-direction: column;
 }
+
+#msg-response p{
+    font-size: 13px;
+    width: 100%;
+}
+

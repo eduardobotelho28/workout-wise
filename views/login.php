@@ -6,7 +6,7 @@
     <title>Workout Wise</title>
     <link rel="stylesheet" href="/workout-wise/assets/css/reset.css">
     <link rel="stylesheet" href="/workout-wise/assets/css/login.css">
-    <script defer src=""></script>
+    <script type="module" defer src="/workout-wise/assets/js/login.js"></script>
 </head>
 <body>
     
@@ -67,6 +67,10 @@
                 <button type="submit">Entrar</button>
 
                 <a href="authentication/open_register_page">Ainda não possui uma conta? Crie uma agora!</a>
+
+                <div id="msg-response" class="msg-response">
+                    
+                </div>
 
             </form>
     
