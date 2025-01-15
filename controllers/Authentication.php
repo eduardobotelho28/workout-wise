@@ -1,6 +1,4 @@
 <?php
-
-    require __DIR__ . '/../vendor/autoload.php';
     
     use App\Authentication_model;
 
@@ -25,24 +23,44 @@
         }
 
         public function login () {
-
+            echo 'aqui';
         }
 
         public function register () {
 
-            $data = $_POST                       ;
-            $this->sanitize($data)               ;
+            try {
+                
+                $data = $_POST                       ;
+                $this->sanitize($data)               ;
 
-            $errors = $this->valid_input ($data) ;
+                $errors = $this->valid_input ($data) ;
 
-            if(!empty($errors)) {
-                $data['errors']  = $errors  ;
-                $data['message'] = 'error'  ;
-                die(json_encode($data));exit;
+                if(!empty($errors)) {
+                    $data['errors']  = $errors  ;
+                    $data['message'] = 'error'  ;
+                    die(json_encode($data));exit;
+                }
+
+                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+                $created_user = $this->authentication_model->insert_user($data)       ;
+
+                if($created_user) {
+                    $data['redirect_url'] = 'http//localhost/workout-wise/authentication';
+                    $data['message']      = 'success'                                    ;
+                    die(json_encode($data));exit        ; 
+                }
+
+            } catch (\PDOException $e) {
+                
+                $data['message'] = 'database error :(' ;
+                die(json_encode($data));exit           ;
+
+            } catch (\Throwable $th) {
+                
+                $data['message'] = $th->getMessage();
+                die(json_encode($data));exit        ;
             }
 
-            // $this->authentication_model->insert_user($data);
-            
         }
 
         protected function sanitize(&$data) {

@@ -25,8 +25,6 @@ async function form_submit (evt) {
         const json_response = await res.json()
         if(json_response) treat_response_message (json_response)
 
-        console.log(json_response)
-        
     } catch (error) {
         console.log(error)
     }
