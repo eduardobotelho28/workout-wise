@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Database;
+use PDO;
 
 class Authentication_model {
 
@@ -29,6 +30,21 @@ class Authentication_model {
 
         return $this->conn->lastInsertId() > 0;
 
+    }
+
+    public function get_user_by_mail ($email) {
+
+        $stmt = $this->conn->prepare(
+            "SELECT * FROM users
+            WHERE email = :email"
+        );
+
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
     }
 
 }

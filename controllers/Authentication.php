@@ -37,12 +37,27 @@
                     die(json_encode($data));exit;
                 }
 
-                //continuar aqui....
+                $user = $this->authentication_model->get_user_by_mail($data['email']);
+                if(!$user) {
+                    $data['errors'] = 'Email ou Senha Inválidos';
+                    die(json_encode($data));exit                ;
+                }
 
-                die(json_encode('aqui'));
+                if(!password_verify($data['password'], $user['password'])) {
+                    $data['errors'] = 'Email ou Senha Inválidos';
+                    die(json_encode($data));exit                ;
+                }
+
+                //user logged in.
+                session_start();
+                $_SESSION['user'] = $user['id'] ?? null;
+                $data['redirect_url'] = 'http//localhost/workout-wise/home';
+                $data['message']      = 'success'                          ;
+                die(json_encode($data));exit                               ;  
             
             } catch (\Throwable $th) {
-                //throw $th;
+                $data['message'] = $th->getMessage();
+                die(json_encode($data));exit        ;
             }
 
         }
@@ -78,8 +93,6 @@
 
             } catch (\Throwable $th) {
                 
-                echo 'nao caiu aqui' ;
-
                 $data['message'] = $th->getMessage();
                 die(json_encode($data));exit        ;
             }
