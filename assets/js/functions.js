@@ -6,7 +6,7 @@ export function treat_response_message (data) {
 
         msgDiv.innerHTML = ''
 
-        if(data.errors) {
+        if(data.errors && typeof data.errors == 'array') {
             data.errors.forEach(error => {
                 const p     = document.createElement('p')
                 p.innerText = error
@@ -15,9 +15,9 @@ export function treat_response_message (data) {
             return
         }
 
-        // const p     = document.createElement('p')
-        // p.innerText = data.message ?? ''
-        // msgDiv.appendChild(p)
+        const p     = document.createElement('p')
+        p.innerText = data.errors ?? ''
+        msgDiv.appendChild(p)
 
         if(data.redirect_url) window.location.href = data.redirect_url
         
