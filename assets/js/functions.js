@@ -6,7 +6,10 @@ export function treat_response_message (data) {
 
         msgDiv.innerHTML = ''
 
-        if(data.errors && typeof data.errors == 'array') {
+        console.log(typeof data.errors)
+        console.log(data.errors)
+
+        if(data.errors && typeof data.errors == 'object') {
             data.errors.forEach(error => {
                 const p     = document.createElement('p')
                 p.innerText = error

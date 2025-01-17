@@ -9,7 +9,8 @@ class Home extends BaseController {
     }
 
     public function index () {
-        echo 'home!!';
+        extract($this->userData);
+        require __DIR__ . '/../views/home.php' ;
     }
     
 }

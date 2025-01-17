@@ -51,7 +51,7 @@
                 //user logged in.
                 session_start();
                 $_SESSION['user'] = $user['id'] ?? null;
-                $data['redirect_url'] = 'http//localhost/workout-wise/home';
+                $data['redirect_url'] = '/workout-wise/home'               ;
                 $data['message']      = 'success'                          ;
                 die(json_encode($data));exit                               ;  
             
@@ -81,7 +81,7 @@
                 $created_user = $this->authentication_model->insert_user($data)       ;
 
                 if($created_user) {
-                    $data['redirect_url'] = 'http//localhost/workout-wise/authentication';
+                    $data['redirect_url'] = '/workout-wise/authentication'               ;
                     $data['message']      = 'success'                                    ;
                     die(json_encode($data));exit        ; 
                 }
