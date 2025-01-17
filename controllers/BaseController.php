@@ -2,7 +2,12 @@
 
 namespace App;
 
+use App\User_model;
+
 class BaseController {
+
+    public $userData;
+    private $user_model;
 
     public function __construct () {
         $this->verify_session();
@@ -14,6 +19,9 @@ class BaseController {
             header('Location: /workout-wise/authentication');
             exit;
         }
+
+        $this->user_model = new User_model();
+        $this->userData = $this->user_model->get($_SESSION['user']);
     }
 
     protected function sanitize(&$data) {
