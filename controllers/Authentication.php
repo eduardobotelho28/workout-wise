@@ -99,6 +99,11 @@
 
         }
 
+        public function logout () {
+            $_SESSION = [];
+            header('Location:/workout-wise/authentication');
+        }
+
         protected function sanitize(&$data) {
             if (is_array($data)) {
                 foreach ($data as $key => &$value) {

@@ -23,7 +23,7 @@
                 <a href="">Meus Treinos</a>
             </div>
             <div class="option">
-                <a href="">Sair</a>
+                <a href="authentication/logout">Sair</a>
             </div>
         </section>
         <section class="about">
