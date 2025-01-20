@@ -1,0 +1,135 @@
+body {
+    background-color: #F7F7F7;
+    color: #1C1C1C;
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #2ECC71;
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.form-section {
+    background-color: #FFFFFF;
+    border: 2px solid #2ECC71;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    color: #2ECC71;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #2ECC71;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #27AE60;
+}
+
+.table-section {
+    background-color: #FFFFFF;
+    border: 2px solid #2ECC71;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+}
+
+.table-section h2 {
+    margin-bottom: 20px;
+    color: #2ECC71;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background-color: #2ECC71;
+    color: #FFFFFF;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #CCC;
+}
+
+tr:nth-child(even) {
+    background-color: #F2F2F2;
+}
+
+.delete {
+    background-color: #E74C3C;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete:hover {
+    background-color: #C0392B;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #2ECC71;
+    padding: 10px;
+    border-radius: 8px;
+}

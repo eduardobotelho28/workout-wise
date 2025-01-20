@@ -14,7 +14,7 @@
     <main>
         <section class="options">
             <div class="option">
-                <a href="">Cadastrar Exercício</a>
+                <a href="exercises">Cadastrar Exercício</a>
             </div>
             <div class="option">
                 <a href="">Cadastrar Treino</a>
