@@ -19,6 +19,24 @@ class Exercises extends BaseController {
         }
         require __DIR__ . '/../views/exercises.php' ;
     }
+
+    public function delete ($id) {
+
+        try {
+            
+            if($this->exercises_model->delete($id)) {
+                $data['status'] = 'success';
+                echo json_encode($data);
+            }
+
+        } catch (\Throwable $th) {
+            http_response_code(500);
+            $data['message'] = $th->getMessage();
+            echo json_encode($data);
+        }
+        
+        
+    }
     
 }
 

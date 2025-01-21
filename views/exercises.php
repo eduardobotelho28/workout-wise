@@ -6,6 +6,7 @@
     <title>Workout-Wise - Gerenciar Exercícios</title>
     <link rel="stylesheet" href="/workout-wise/assets/css/reset.css">
     <link rel="stylesheet" href="/workout-wise/assets/css/exercises.css">
+    <script type="module" defer src="/workout-wise/assets/js/exercises.js"></script>
 </head>
 <body>
     <header>
