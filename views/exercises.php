@@ -16,9 +16,9 @@
 
         <section class="form-section">
             <h2>Adicionar Exercício</h2>
-            <form action="" method="POST">
+            <form action="" method="POST" id="exercise-form">
                 <label for="nome-exercicio">Nome do Exercício:</label>
-                <input type="text" id="nome-exercicio" name="name" placeholder="Digite o nome do exercício" required>
+                <input type="text" id="exercise_field" name="name" placeholder="Digite o nome do exercício" required>
                 <button type="submit">Adicionar</button>
             </form>
         </section>

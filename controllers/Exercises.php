@@ -20,6 +20,26 @@ class Exercises extends BaseController {
         require __DIR__ . '/../views/exercises.php' ;
     }
 
+    public function insert ($name) {
+        try {
+
+            $this->sanitize($name);
+            
+            $name = urldecode($name);
+
+            if($this->exercises_model->insert($name)) {
+                $data['status'] = 'success';
+                $this->response($data, 200, '');
+            }
+            
+
+        } catch (\Throwable $th) {
+            http_response_code(500);
+            $data['message'] = $th->getMessage();
+            echo json_encode($data);
+        }
+    }
+
     public function delete ($id) {
 
         try {

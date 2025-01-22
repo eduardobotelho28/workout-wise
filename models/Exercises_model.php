@@ -36,6 +36,19 @@ class Exercises_model {
         $stmt->execute();
         return $stmt->rowCount() > 0;
     }
+
+    public function insert ($name) {
+        $stmt = $this->conn->prepare(
+            "INSERT INTO exercises (name, created_by, create_at)
+            VALUES (:name, :created_by, :create_at)"
+        );
+        $stmt->execute([
+            'name'       => $name,
+            'created_by' => $_SESSION['user'],
+            'create_at'  => date('Y-m-d h:i:s')
+        ]);
+        return $stmt->rowCount() > 0;
+    }
  
 }
 
