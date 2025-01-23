@@ -13,7 +13,8 @@
 
         <h1 id="title">Cadastre Seus Treinos</h1>
 
-        <div class="form-wrapper">
+        <div class="form-wrapper workout-name">
+            <p>Este nome será o identificador para seus treinos na hora de análise.</p>
             <label for="name">Nome(tipo)</label>
             <input type="text" name="name" id="name">
         </div>
@@ -51,6 +52,9 @@
     </main>
 
     <div class="add-more-div">
+        <div class="errors">
+            <!-- erro -->
+        </div>
         <button>
             +
         </button>

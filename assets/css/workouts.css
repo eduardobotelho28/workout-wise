@@ -4,7 +4,6 @@ html, body {
 }
 
 body {
-    background-color: aquamarine;
     display: flex                 ;
 }
 
@@ -17,13 +16,42 @@ main {
     flex-direction: column     ;
     align-items: center        ;
     padding-top: 20px          ;
+    gap: 15px                  ;
 
 }
 
 .add-more-div {
-    width: 20%                      ;
-    background-color: antiquewhite;
-    height: 100%                    ;
+    width: 20%                  ;
+    height: 100%                ;
+    display: flex               ;
+    background-color: #E7E7E7 ;
+    flex-direction: column      ;
+    /* gap: 50px                   ; */
+    justify-content: center     ;
+    align-items: center         ;
+    position: relative          ;
+
+}
+
+.add-more-div button {
+    width: 80px                ;
+    height:80px                ;
+    border-radius: 50%         ;
+    border: none               ;
+    background-color: #2ECC71; 
+    font-size: 50px            ;
+    text-align: center         ;
+}
+
+.add-more-div .errors {
+    
+    padding: 10px              ;
+    border-radius: 10px        ;
+    font-size: 20px            ;  
+
+    position: absolute;
+    top: 50px;
+    right: 100px;
 }
 
 #title {
@@ -31,7 +59,7 @@ main {
     font-weight: bold;
 }
 
-form {
+form, .workout-name {
     background-color: white;
     padding: 20px            ;
     border-radius: 10px      ;
@@ -39,4 +67,26 @@ form {
     -webkit-box-shadow: 6px 5px 6px 0px rgba(46,204,113,1);
     -moz-box-shadow: 6px 5px 6px 0px rgba(46,204,113,1)   ;
     box-shadow: 6px 5px 6px 0px rgba(46,204,113,1)        ;
+}
+
+form {
+    display: flex;
+    gap: 10px    ;
+}
+
+form .form-wrapper {
+    display: flex         ;
+    flex-direction: column;
+}
+
+input, select {
+    padding: 5px            ;
+    border-radius: 5px      ;
+    border: 1px solid #777;
+    width: 200px            ;
+}
+
+.workout-name p {
+    color: #777    ;
+    margin-bottom: 5px;
 }
