@@ -6,6 +6,7 @@
     <title>Workout Wise - Treinos</title>
     <link rel="stylesheet" href="/workout-wise/assets/css/reset.css">
     <link rel="stylesheet" href="/workout-wise/assets/css/workouts.css">
+    <script type="module" defer src="/workout-wise/assets/js/workout.js"></script>
 </head>
 <body>
     
@@ -19,9 +20,9 @@
             <input type="text" name="name" id="name">
         </div>
 
-        <section id="treino">
+        <form action="" id="form-workout">
 
-            <form action="" id="form-workout">
+            <section id="treino">
 
                 <div class="form-wrapper">
                     <label for="exercise">Exercício</label>
@@ -45,9 +46,13 @@
                     <input type="number" name="weight" id="weight">
                 </div>
 
-            </form>
+                <button id="delete-btn" type="button">
+                    Deletar
+                </button>
 
-        </section>
+            </section>
+
+        </form>
 
     </main>
 
@@ -55,11 +60,13 @@
         <div class="errors">
             <!-- erro -->
         </div>
-        <button>
+        <button id="add-more-button">
             +
+        </button>
+        <button id="save-button">
+            Salvar Treino
         </button>
     </div>
     
-
 </body>
 </html>
