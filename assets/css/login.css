@@ -135,11 +135,6 @@ main {
     flex-direction: column;
 }
 
-/* #msg-response {
-    display: flex;
-    flex-direction: column ;
-} */
-
 #msg-response p{
     font-size: 13px;
     width: 100%;

@@ -17,7 +17,7 @@
                 <a href="exercises">Cadastrar Exercício</a>
             </div>
             <div class="option">
-                <a href="">Cadastrar Treino</a>
+                <a href="workouts">Cadastrar Treino</a>
             </div>
             <div class="option">
                 <a href="">Meus Treinos</a>
