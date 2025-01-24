@@ -16,6 +16,12 @@ class Workouts extends BaseController {
         
         require __DIR__ . '/../views/workouts.php' ;
     }
+
+    public function save () {
+
+        echo 'aqui';
+
+    }
  
 }
 

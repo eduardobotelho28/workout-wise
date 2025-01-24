@@ -46,7 +46,7 @@
                     <input type="number" name="weight" id="weight">
                 </div>
 
-                <button id="delete-btn" type="button">
+                <button id="delete-btn" type="button" class="delete-btn">
                     Deletar
                 </button>
 

@@ -49,6 +49,11 @@ class Exercises_model {
         ]);
         return $stmt->rowCount() > 0;
     }
+
+    public function get_all () {
+        $stmt = $this->conn->query("SELECT * FROM exercises");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
  
 }
 

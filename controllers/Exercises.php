@@ -55,7 +55,19 @@ class Exercises extends BaseController {
             echo json_encode($data);
         }
         
+    }
+
+    public function get_all () {
+
+        try {
+            
+            $data = $this->exercises_model->get_all();
+            $this->response($data, 200, 'success');
         
+        } catch (\Throwable $th) {
+            $this->response([], 500, $th->getMessage());
+        }
+
     }
     
 }

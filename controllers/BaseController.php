@@ -35,10 +35,15 @@ class BaseController {
         return $data;
     }
 
-    protected function response ($data, $http_code, $msg) {
+    protected function response ($data, $http_code, $msg = null) {
+        
         header('Content-type: application/json');
         http_response_code($http_code);
-        $data['message'] = $msg;
+
+        if(!empty($data['msg'])) {
+            $data['message'] = $msg;
+        }
+        
         die(json_encode($data));exit;
     }
 
