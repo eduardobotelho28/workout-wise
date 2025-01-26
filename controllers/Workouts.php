@@ -1,14 +1,14 @@
 <?php
 
 use App\BaseController;
-// use App\Exercises_model;
+use App\Workouts_model;
 
 class Workouts extends BaseController {
 
-    private $exercises_model;
+    private $workouts_model;
 
     public function __construct () {
-        // $this->exercises_model = new Exercises_model();
+        $this->workouts_model = new Workouts_model();
         parent::__construct();
     }
 
@@ -19,7 +19,23 @@ class Workouts extends BaseController {
 
     public function save () {
 
-        echo 'aqui';
+        $this->validateHttpMethod("POST");
+
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        $this->sanitize($data);
+
+        echo '<pre>' ; print_r($data);
+
+        try {
+
+            // $this->workouts_model->insert($data);
+            
+        } catch (\Throwable $th) {
+            $this->response([], 500, 'error');
+        }
+
+        // $this->response($data, 200, 'success');
 
     }
  

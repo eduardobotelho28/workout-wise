@@ -38,6 +38,8 @@ async function send_to_save (evt) {
     })
 
     const res = await req.json()
+
+    console.log(res)
     
 }
 
