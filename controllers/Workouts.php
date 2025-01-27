@@ -36,7 +36,28 @@ class Workouts extends BaseController {
         }
 
     }
- 
+
+    public function my_workouts () {
+
+        $data = $this->workouts_model->get_workouts_by_user();
+
+        $data_by_name = [];
+
+        foreach ($data as $item) {
+            $name = strtolower($item['name']);
+            $data_by_name[$name][] = $item;
+        }
+
+        require __DIR__ . '/../views/my_workouts.php' ;
+
+    }
+
+    public function delete_workout ($id) {
+
+        
+
+    }
+    
 }
 
 ?>

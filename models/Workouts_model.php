@@ -47,6 +47,15 @@ class Workouts_model {
 
     }
 
+    public function get_workouts_by_user () {
+        
+        $id = $_SESSION['user'];
+
+        $stmt = $this->conn->query("SELECT * FROM workouts WHERE created_by = $id");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+
 }
 
 ?>
