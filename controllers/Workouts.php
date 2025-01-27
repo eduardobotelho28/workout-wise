@@ -25,17 +25,15 @@ class Workouts extends BaseController {
 
         $this->sanitize($data);
 
-        echo '<pre>' ; print_r($data);
-
         try {
 
-            // $this->workouts_model->insert($data);
+            $this->workouts_model->insert($data);
+
+            $this->response([], 200, 'success');
             
         } catch (\Throwable $th) {
             $this->response([], 500, 'error');
         }
-
-        // $this->response($data, 200, 'success');
 
     }
  

@@ -40,7 +40,7 @@ class BaseController {
         header('Content-type: application/json');
         http_response_code($http_code);
 
-        if(!empty($data['msg'])) {
+        if(!empty($msg)) {
             $data['message'] = $msg;
         }
         

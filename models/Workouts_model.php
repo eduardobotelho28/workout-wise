@@ -16,49 +16,37 @@ class Workouts_model {
 
     public function insert ($data) {
         
+        try {
+            
+            $this->conn->beginTransaction();
+    
+            $stmt = $this->conn->prepare("
+                INSERT INTO workouts (name, exercise, series, reps, weight, created_at, created_by)
+                VALUES (:name, :exercise, :series, :reps, :weight, :created_at, :created_by)
+            ");
+    
+            foreach ($data as $dt) {
+                $stmt->execute([
+                    ':name'       => $dt['name']        ,
+                    ':exercise'   => $dt['exercise']    ,
+                    ':series'     => $dt['series']      ,
+                    ':reps'       => $dt['reps']        ,
+                    ':weight'     => $dt['weight']      ,
+                    ':created_at' => date('Y-m-d h:i:s'),
+                    ':created_by' => $_SESSION['user']  ,
+                ]);
+            }
+    
+            $this->conn->commit();
+    
+            return true;
+        } catch (\PDOException $e) {
+            $this->conn->rollBack();
+            throw new \Exception("Erro ao inserir exercícios: " . $e->getMessage());
+        }
+
     }
 
-    // public function get_by_user($id) {
-
-    //     $stmt = $this->conn->prepare(
-    //         "SELECT * FROM exercises
-    //         WHERE created_by = :created_by"
-    //     );
-
-    //     $stmt->bindParam(':created_by', $id, PDO::PARAM_STR);
-    //     $stmt->execute();
-
-    //     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    //     return $result;
-
-    // }
-
-    // public function delete ($id) {
-    //     $stmt = $this->conn->prepare("DELETE FROM exercises WHERE id = :id");
-    //     $stmt->bindParam(':id', $id, PDO::PARAM_STR);
-    //     $stmt->execute();
-    //     return $stmt->rowCount() > 0;
-    // }
-
-    // public function insert ($name) {
-    //     $stmt = $this->conn->prepare(
-    //         "INSERT INTO exercises (name, created_by, create_at)
-    //         VALUES (:name, :created_by, :create_at)"
-    //     );
-    //     $stmt->execute([
-    //         'name'       => $name,
-    //         'created_by' => $_SESSION['user'],
-    //         'create_at'  => date('Y-m-d h:i:s')
-    //     ]);
-    //     return $stmt->rowCount() > 0;
-    // }
-
-    // public function get_all () {
-    //     $stmt = $this->conn->query("SELECT * FROM exercises");
-    //     return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // }
- 
 }
 
 ?>

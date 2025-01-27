@@ -11,6 +11,9 @@ if (add_more_btn) add_more_btn.addEventListener('click', cloneFormSection)
 
 function cloneFormSection () {
     const clonedForm = section_workout.cloneNode(true)
+
+    clonedForm.querySelectorAll('input,select').forEach ( field => field.value = '')
+
     form.appendChild(clonedForm)
 }
 
@@ -39,7 +42,19 @@ async function send_to_save (evt) {
 
     const res = await req.json()
 
-    console.log(res)
+    if(res.message === 'success') {
+        div_errors.innerHTML = ''
+        div_errors.innerHTML = 'Salvo com sucesso!'
+
+        form.querySelectorAll('section').forEach (section => {
+
+            // remove the sections until only one remains
+            if(form.querySelectorAll('section').length > 1) {
+                section.remove()
+            }
+
+        })
+    }
     
 }
 
@@ -81,7 +96,7 @@ function organize_fields () {
     
     const res       = await fetch(`/workout-wise/exercises/get_all`)
     const exercises = await res.json()
-     
+ 
     if(exercises.length > 0) {
 
         exercises.forEach(exercise => {

@@ -62,7 +62,7 @@ class Exercises extends BaseController {
         try {
             
             $data = $this->exercises_model->get_all();
-            $this->response($data, 200, 'success');
+            $this->response($data, 200);
         
         } catch (\Throwable $th) {
             $this->response([], 500, $th->getMessage());
