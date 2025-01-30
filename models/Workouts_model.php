@@ -51,7 +51,7 @@ class Workouts_model {
         
         $id = $_SESSION['user'];
 
-        $stmt = $this->conn->query("SELECT * FROM workouts WHERE created_by = $id");
+        $stmt = $this->conn->query("SELECT workouts.*, exercises.name as exercise_name FROM workouts JOIN exercises ON workouts.exercise = exercises.id WHERE workouts.created_by = $id");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
         
     }

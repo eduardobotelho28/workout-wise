@@ -14,6 +14,8 @@
 
         <h1>Meus Treinos</h1>
 
+        <a href="/workout-wise/home">Voltar</a>
+        
         <?php if (!empty($data_by_name)) : ?>
 
             <?php foreach ($data_by_name as $name => $arrays) : ?>
@@ -27,7 +29,15 @@
                     <?php foreach ($arrays as $array) : ?>
 
                         <div class="workout-info">
-                            <?php print_r($array); ?>
+                            
+                            <p>Exercício: <?= $array['exercise_name'] ?? '' ?></p>
+                            <p>Séries : <?= $array['series'] ?? '' ?></p>
+                            <p>Reps: <?= $array['reps'] ?? '' ?></p>
+                            <p>Peso: <?= $array['weight'] ?? '' ?></p>
+                            <p>Data: <?= $array['created_at'] ?? '' ?></p>
+
+                            <a href="workout/delete_workout/<?=$array['id']?>">Deletar Treino</a>
+
                         </div>
                         
                     <?php endforeach ?>
