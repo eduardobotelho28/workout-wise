@@ -20,7 +20,7 @@
                 <a href="workouts">Cadastrar Treino</a>
             </div>
             <div class="option">
-                <a href="">Meus Treinos</a>
+                <a href="workouts/my_workouts">Meus Treinos</a>
             </div>
             <div class="option">
                 <a href="authentication/logout">Sair</a>

@@ -1,0 +1,34 @@
+html, body {
+    width: 100% ;
+    height: 100%;
+    background-color: #E7E7E7;
+}
+
+body {
+    display: flex              ;
+    justify-content: center    ;
+}
+
+main {
+    display: flex         ;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workout {
+    width: 800px;
+    max-width: 800px;
+    background-color: white;
+}
+
+.workout-title {
+    background-color: #8a8a8a;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.workout-info {
+    padding: 5px             ;
+    background-color: white;
+    margin-bottom: 10px      ;
+}
