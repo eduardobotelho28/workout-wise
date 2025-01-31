@@ -66,6 +66,7 @@
         <button id="save-button">
             Salvar Treino
         </button>
+        <a href="/workout-wise/home">Voltar</a>
     </div>
     
 </body>

@@ -12,6 +12,9 @@
     <header>
         <h1>Gerenciar Exercícios</h1>
     </header>
+
+    <a href="/workout-wise/home">Voltar</a>
+    
     <main>
 
         <section class="form-section">

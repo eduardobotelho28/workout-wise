@@ -36,7 +36,7 @@
                             <p>Peso: <?= $array['weight'] ?? '' ?></p>
                             <p>Data: <?= $array['created_at'] ?? '' ?></p>
 
-                            <a href="workout/delete_workout/<?=$array['id']?>">Deletar Treino</a>
+                            <a href="delete_workout/<?=$array['id']?>">Deletar Treino</a>
 
                         </div>
                         

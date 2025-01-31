@@ -8,13 +8,23 @@ body {
     padding: 20px;
 }
 
-header {
+header, a {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom:20px;
     background-color: #2ECC71;
     color: #FFFFFF;
     padding: 20px;
     border-radius: 8px;
+    text-decoration: none;
+}
+
+a {
+    padding: 10px;
+    text-align: center;
+    background-color: #2ECC71;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px;
 }
 
 h1 {
@@ -135,3 +145,4 @@ footer {
     padding: 10px;
     border-radius: 8px;
 }
+

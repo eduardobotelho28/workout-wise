@@ -52,10 +52,10 @@ class Workouts extends BaseController {
 
     }
 
-    public function delete_workout ($id) {
-
-        
-
+    public function delete_workout ($id) {  
+        if($this->workouts_model->delete($id)) {
+            header('Location: /workout-wise/workouts/my_workouts');
+        }
     }
     
 }

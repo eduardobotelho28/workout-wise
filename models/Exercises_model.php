@@ -51,10 +51,12 @@ class Exercises_model {
     }
 
     public function get_all () {
-        $stmt = $this->conn->query("SELECT * FROM exercises");
+        $user = $_SESSION['user'];
+        $stmt = $this->conn->query("SELECT * FROM exercises WHERE created_by = $user");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
  
+   
 }
 
 ?>

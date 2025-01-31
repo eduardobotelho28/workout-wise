@@ -56,6 +56,13 @@ class Workouts_model {
         
     }
 
+    public function delete ($id) {
+        $stmt = $this->conn->prepare("DELETE FROM workouts WHERE id = :id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->rowCount() > 0;
+    }
+
 }
 
 ?>
