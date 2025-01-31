@@ -44,7 +44,7 @@ class Workouts extends BaseController {
         $data_by_name = [];
 
         foreach ($data as $item) {
-            $name = strtolower($item['name']);
+            $name = strtoupper($item['name']);
             $data_by_name[$name][] = $item;
         }
 
